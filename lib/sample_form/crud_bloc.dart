@@ -12,7 +12,7 @@ class CrudBloc extends Bloc<CrudEvent,CrudState>{
         clsCrudState.currentState=1;
       }else if(state.currentState==1){
         clsCrudState.currentState=0;
-        clsCrudState.currentWidget="Default Widget";
+        clsCrudState.currentWidget="Old Widget";
       }
       emit(clsCrudState);
     });
