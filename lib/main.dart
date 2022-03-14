@@ -1,5 +1,7 @@
 import 'package:bloc_example/bloc/counter.dart';
 import 'package:bloc_example/bloc/counter_page.dart';
+import 'package:bloc_example/sample_form/crud_bloc.dart';
+import 'package:bloc_example/sample_form/crud_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -15,8 +17,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: BlocProvider(
-        create: (_)=>CounterBloc(),
-        child: CounterPage(),
+        create: (_)=>CrudBloc(),
+        child: CrudPage(),
       ),
     );
   }

@@ -4,9 +4,21 @@ abstract class CounterEvent {}
 class CounterIncrementPressed extends CounterEvent {}
 class CounterDecrementPressed extends CounterEvent {}
 
-class CounterBloc extends Bloc<CounterEvent, int> {
-  CounterBloc() : super(0) {
-    on<CounterIncrementPressed>((event, emit) => emit(state + 1));
-    on<CounterDecrementPressed>((event, emit) => emit(state - 1));
+class CounterState{
+  int currentValue=0;
+}
+
+class CounterBloc extends Bloc<CounterEvent, CounterState> {
+  CounterBloc() : super(CounterState()) {
+    on<CounterIncrementPressed>((event, emit) {      
+      final clsState=CounterState();
+      clsState.currentValue=state.currentValue+1;
+      emit(clsState);
+    });
+    on<CounterDecrementPressed>((event, emit){
+      final clsState=CounterState();
+      clsState.currentValue=state.currentValue-1;
+      emit(clsState);
+    });
   }
 }

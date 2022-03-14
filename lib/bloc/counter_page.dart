@@ -7,11 +7,11 @@ class CounterPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Counter')),
-      body: BlocBuilder<CounterBloc, int>(
-        builder: (context, count) {
+      body: BlocBuilder<CounterBloc, CounterState>(
+        builder: (context, state) {
           return Center(
             child: Text(
-              '$count',
+              '${state.currentValue}',
               style: TextStyle(fontSize: 24.0),
             ),
           );
